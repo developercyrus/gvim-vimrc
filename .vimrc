@@ -67,7 +67,6 @@ set splitright
 " 使用内置 tab 样式而不是 gui
 set guioptions-=e
 set nolist
-set guifont=Inconsolata:h12:cANSI
 " }}} 
 
 
@@ -81,3 +80,28 @@ set softtabstop=4
 set foldmethod=indent
 syntax on
 " }}}
+
+
+
+" Keymap {{{
+
+" copy & paste
+map <C-v> "+gP
+vmap <C-c> "+y
+vnoremap <BS> d
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+imap <C-V>		"+gP
+map <S-Insert>		"+gP
+cmap <C-V>		<C-R>+
+cmap <S-Insert>		<C-R>+
+
+" select all
+map <C-a> <esc>ggVG<CR>
+
+" save
+nmap <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>a
+
+" }}}
+
